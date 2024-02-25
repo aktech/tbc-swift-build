@@ -9,6 +9,7 @@ runners:
   - name: cirun-win11pro-23h2-x64-8
     cloud: azure
     instance_type: Standard_B8als_v2
+    region: uksouth
     machine_image:
       #id: "/subscriptions/fe7bef8e-1cf6-4ac1-9385-be50a1504961/resourceGroups/Win-CI/providers/Microsoft.Compute/galleries/base_images/images/win11-23h2-pro-x64/versions/2024.02.22"
       publisher: MicrosoftWindowsDesktop
@@ -20,6 +21,7 @@ runners:
   - name: cirun-win11pro-23h2-x64-64
     cloud: azure
     instance_type: Standard_F64s_v2
+    region: uksouth
     machine_image:
       #id: "/subscriptions/fe7bef8e-1cf6-4ac1-9385-be50a1504961/resourceGroups/Win-CI/providers/Microsoft.Compute/galleries/base_images/images/win11-23h2-pro-x64/versions/2024.02.22"
       publisher: MicrosoftWindowsDesktop
