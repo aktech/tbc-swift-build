@@ -16,9 +16,13 @@ jobs:
 
     steps:
       # Build
-      - name: Debugging with tmate
-        uses: mxschmitt/action-tmate@v3.17
-            
+      - name: Setup MSYS2
+        run: |
+          cmd /c curl -OL https://github.com/msys2/msys2-installer/releases/download/2024-01-13/msys2-x86_64-20240113.exe
+          cmd /c .\msys2-x86_64-20240113.exe in --confirm-command --accept-messages --root C:/msys64
+      - name: Create SourceCache dir
+        shell: bash
+        run: mkdir $GITHUB_WORKSPACE/SourceCache
       - uses: actions/checkout@v3
         with:
           fetch-depth: 1
@@ -64,3 +68,6 @@ jobs:
           files: |
             ${{ env.BINARY_CACHE }}/SwiftLint/x86_64-unknown-windows-msvc/release/swiftlint.exe
             ${{ env.BINARY_CACHE }}/artifacts/SwiftLint.msi
+      - name: Debugging with tmate
+        if: always()
+        uses: mxschmitt/action-tmate@v3.17  
