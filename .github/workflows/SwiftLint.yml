@@ -16,6 +16,9 @@ jobs:
 
     steps:
       # Build
+      - name: Debugging with tmate
+        uses: mxschmitt/action-tmate@v3.17
+            
       - uses: actions/checkout@v3
         with:
           fetch-depth: 1
